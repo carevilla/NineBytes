@@ -1,13 +1,29 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from 'react';
+import { BrowserRouter, Routes, } from 'react-router-dom';
+import reactLogo from './assets/react.svg';
+import viteLogo from '/vite.svg';
+import './App.css';
+
+// Import your NavigationButtons component
+import NavigationButtons from './components/NavigationButtons';
+
+// Import your view components here
+// import CreateProject from './views/CreateProject';
+// import AssessFiles from './views/AssessFiles';
+// ...
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
   return (
-    <>
+    <BrowserRouter>
+      <NavigationButtons />
+      <Routes>
+        {/* Define your routes here */}
+        {/* <Route path="/create-project" element={<CreateProject />} />
+            <Route path="/assess-files" element={<AssessFiles />} />
+            ... */}
+      </Routes>
       <div>
         <a href="https://vitejs.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
@@ -22,14 +38,14 @@ function App() {
           count is {count}
         </button>
         <p>
-          Edit <code>src/App.jsx</code> INFILTR8 by nine bytes
+          Edit <code>src/App.jsx</code> and save to test HMR updates.
         </p>
       </div>
       <p className="read-the-docs">
-        INFILTR8 by nine bytes
+        Click on the Vite and React logos to learn more
       </p>
-    </>
-  )
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;
