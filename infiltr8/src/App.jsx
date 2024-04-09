@@ -19,65 +19,23 @@ import VerifyScope from './components/VerifyScope';
 
 function App() {
   
-
   const tabs = [
     {
       title: "View Dashboard",
       value: "view-dashboard",
       content:<ViewDashboard />
-      
     },
     {
       title: "Show Progress",
       value: "show-progress",
-      content: (
-          <div className="tab-content">
-            <ShowProgress />
-          </div>
-      ),
+      content: <ShowProgress />,
     },
     {
       title: "Manage Project",
       value: "manage-project",
-      content: <ManageProject />
-      
+      content: <ManageProject />,
     },
-      {
-        title: "Create Project",
-        value: "create-project",
-        content: 
-        <div>
-          <CreateProject/>
-        </div>
-          
-        
-      },
-      
-    {
-      title: "Ingest Reconnaissance Files",
-      value: "ingest-files",
-      content: <IngestReconnaissanceFiles />
-    },
-    {
-      title: "Verify Scope",
-      value: "verify-scope",
-      content:<VerifyScope />
-    },
-    {
-      title: "Delete Project",
-      value: "delete-project",
-      content: (
-        <div className="w-full overflow-hidden relative h-full rounded-2xl p-10 text-xl md:text-4xl font-bold text-white bg-gradient-to-br from-purple-700 to-violet-900">
-          <p>Create Project</p>
-          <DummyContent />
-        </div>
-      ),
-    },
-    {
-      title: "Assess Files",
-      value: "assess-files",
-      content: <AssessFiles />
-    },
+    // ...other tabs if necessary
   ];
 
   return (
