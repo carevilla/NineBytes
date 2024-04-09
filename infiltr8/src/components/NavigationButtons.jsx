@@ -1,8 +1,9 @@
 import { Link } from 'react-router-dom';
+import './NavigationButtons.css'; 
 
 const NavigationButtons = () => {
   return (
-    <div>
+    <div className="navbar">
       <Link to="/create-project"><button>Create Project</button></Link>
       <Link to="/assess-files"><button>Assess Files</button></Link>
       <Link to="/edit-ip"><button>Edit IP Addresses</button></Link>
