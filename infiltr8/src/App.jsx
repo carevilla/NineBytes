@@ -1,23 +1,18 @@
 import { useState } from 'react';
-import { BrowserRouter, Routes, } from 'react-router-dom';
+import { BrowserRouter, Routes } from 'react-router-dom';
 import reactLogo from './assets/react.svg';
 import viteLogo from '/vite.svg';
 import './App.css';
 import './index.css';
 import NavigationButtons from './components/NavigationButtons';
 import { BackgroundGradientAnimation } from './components/ui/background-gradient-animation';
-
-
-// Import your view components here
-// import CreateProject from './views/CreateProject';
-// import AssessFiles from './views/AssessFiles';
-// ...
+import { Boxes } from './components/ui/background-boxes';
 
 function App() {
   const [count, setCount] = useState(0);
 
   return (
-    <BrowserRouter>
+    <Boxes>
       <BackgroundGradientAnimation>
         <NavigationButtons />
         <Routes>
@@ -34,6 +29,7 @@ function App() {
             <img src={reactLogo} className="logo react" alt="React logo" />
           </a>
         </div>
+
         <h1>INFILTR8</h1>
         <div className="card">
           <button onClick={() => setCount((count) => count + 1)}>
@@ -47,7 +43,7 @@ function App() {
           Click on the Vite and React logos to learn more
         </p>
       </BackgroundGradientAnimation>
-    </BrowserRouter>
+    </Boxes>
   );
 }
 
