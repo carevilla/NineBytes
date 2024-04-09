@@ -3,11 +3,15 @@
 import React, { useState } from 'react';
 import './App.css';
 import './index.css';
-import NavigationButtons from './components/NavigationButtons';
+import { cn } from "@/utils/cn"
+import { NavbarDemo } from './components/ui/navbar';
 import { Boxes } from './components/ui/background-boxes';
 import { Tabs } from "./components/ui/tabs";
 import CreateProjectForm  from './components/CreateProjectForm';
 import ShowProgress from './components/ShowProgress';
+import { HoveredLink, Menu, MenuItem, ProductItem } from "./components/ui/navbar-menu";
+
+
 
 
 function App() {
@@ -97,10 +101,12 @@ function App() {
   ];
 
   return (
-    <div className="app-container"> {/* Ensure this container is relative if using absolute positioning */}
+    <div className="app-container">  <NavbarDemo />{/* Ensure this container is relative if using absolute positioning */}
+  
       <Boxes className="background-boxes" /> {/* Background boxes should be styled to be behind all content */}
       
       <Tabs tabs={tabs} className="tabs" /> {/* Tabs should not be nested within Boxes if they need to be on top */}
+      
       
       
       

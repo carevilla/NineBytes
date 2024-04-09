@@ -1,16 +1,41 @@
 .show-progress-container {
-    padding: 20px;
-    background-color: #f5f5f5; /* Just an example; set your own styles */
-    border-radius: 8px;
-  }
-  
-  .show-progress-container h1 {
-    color: #333;
-    font-size: 24px;
-  }
-  
-  .show-progress-container p {
-    color: #666;
-    font-size: 16px;
-  }
-  
+  padding: 20px;
+  background-color: #030303; /* Default background, adjust if needed */
+  border-radius: 8px;
+  color: #FFFFFF; /* Text color white */
+}
+
+.show-progress-container h1, .show-progress-container p {
+  color: inherit; /* Ensure text colors are white */
+}
+
+.progress-bar-container {
+  margin-bottom: 10px;
+}
+
+.progress-bar-background {
+  background-color: #ddd; /* Light grey background for the progress bar container */
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 20px;
+  /* Gradient background from purple to violet */
+  background: linear-gradient(to bottom right, #6a1b9a, #9c27b0);
+  border-radius: 4px;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.progress-percentage {
+  color: white; /* White text for the percentage */
+  margin-left: 5px;
+}
+
+label {
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #FFFFFF; /* White text for labels */
+}
