@@ -97,27 +97,18 @@ function App() {
   ];
 
   return (
-    <Tabs tabs={tabs}>
+    <div className="app-container"> {/* Ensure this container is relative if using absolute positioning */}
+      <Boxes className="background-boxes" /> {/* Background boxes should be styled to be behind all content */}
       
-      <Boxes>
-        <NavigationButtons />
-
-
-        <div className="card">
-          <button onClick={() => setCount((count) => count + 1)}>
-            count is {count}
-          </button>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test HMR updates.
-          </p>
-        </div>
-        <p className="read-the-docs">
-          Click on the Vite and React logos to learn more
-        </p>
-        </Boxes>
-    </Tabs>
+      <Tabs tabs={tabs} className="tabs" /> {/* Tabs should not be nested within Boxes if they need to be on top */}
+      
+      
+      
+      {/* ...other components like cards and additional info */}
+    </div>
   );
 }
+
 
 const DummyContent = () => {
   return (
