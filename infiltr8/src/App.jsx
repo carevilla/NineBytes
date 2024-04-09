@@ -4,29 +4,27 @@ import React, { useState } from 'react';
 import './App.css';
 import './index.css';
 import { cn } from "@/utils/cn"
-import { NavbarDemo } from './components/ui/navbar';
+import ViewDashboard from './components/ViewDashboard';
 import { Boxes } from './components/ui/background-boxes';
 import { Tabs } from "./components/ui/tabs";
 import CreateProjectForm  from './components/CreateProjectForm';
 import ShowProgress from './components/ShowProgress';
-import { HoveredLink, Menu, MenuItem, ProductItem } from "./components/ui/navbar-menu";
+import ManageProject from './components/ManageProject';
+
+
 
 
 
 
 function App() {
-  const [count, setCount] = useState(0);
+  
 
   const tabs = [
     {
       title: "View Dashboard",
       value: "view-dashboard",
-      content: (
-        <div className="w-full overflow-hidden relative h-full rounded-2xl p-10 text-xl md:text-4xl font-bold text-white bg-gradient-to-br from-purple-700 to-violet-900">
-          <p>Product Tab</p>
-          <ViewDash />
-        </div>
-      ),
+      content:<ViewDashboard />
+      
     },
     {
       title: "Show Progress",
@@ -40,12 +38,8 @@ function App() {
     {
       title: "Manage Project",
       value: "manage-project",
-      content: (
-        <div className="w-full overflow-hidden relative h-full rounded-2xl p-10 text-xl md:text-4xl font-bold text-white bg-gradient-to-br from-purple-700 to-violet-900">
-          <p>Manage Project</p>
-          <DummyContent />
-        </div>
-      ),
+      content: <ManageProject />
+      
     },
       {
         title: "Create Project",
@@ -101,7 +95,7 @@ function App() {
   ];
 
   return (
-    <div className="app-container">  <NavbarDemo />{/* Ensure this container is relative if using absolute positioning */}
+    <div className="app-container">  {/* Ensure this container is relative if using absolute positioning */}
   
       <Boxes className="background-boxes" /> {/* Background boxes should be styled to be behind all content */}
       
