@@ -10,8 +10,9 @@ import { Tabs } from "./components/ui/tabs";
 import CreateProjectForm  from './components/CreateProjectForm';
 import ShowProgress from './components/ShowProgress';
 import ManageProject from './components/ManageProject';
-
-
+import AssessFiles from './components/AssessFiles';
+import IngestReconnaissanceFiles from './components/IngestReconnaissanceFiles';
+import VerifyScope from './components/VerifyScope';
 
 
 
@@ -55,22 +56,12 @@ function App() {
     {
       title: "Ingest Reconnaissance Files",
       value: "ingest-files",
-      content: (
-        <div className="w-full overflow-hidden relative h-full rounded-2xl p-10 text-xl md:text-4xl font-bold text-white bg-gradient-to-br from-purple-700 to-violet-900">
-          <p>Ingest Reconnaissance Files</p>
-          <DummyContent />
-        </div>
-      ),
+      content: <IngestReconnaissanceFiles />
     },
     {
       title: "Verify Scope",
       value: "verify-scope",
-      content: (
-        <div className="w-full overflow-hidden relative h-full rounded-2xl p-10 text-xl md:text-4xl font-bold text-white bg-gradient-to-br from-purple-700 to-violet-900">
-          <p>Create Project</p>
-          <DummyContent />
-        </div>
-      ),
+      content:<VerifyScope />
     },
     {
       title: "Delete Project",
@@ -85,12 +76,7 @@ function App() {
     {
       title: "Assess Files",
       value: "assess-files",
-      content: (
-        <div className="w-full overflow-hidden relative h-full rounded-2xl p-10 text-xl md:text-4xl font-bold text-white bg-gradient-to-br from-purple-700 to-violet-900">
-          <p>Create Project</p>
-          <DummyContent />
-        </div>
-      ),
+      content: <AssessFiles />
     },
   ];
 
