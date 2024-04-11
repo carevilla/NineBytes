@@ -1,81 +1,38 @@
 // ViewDashboard.jsx
-import React, { useState, useEffect } from 'react';
-// Import additional components/libraries as needed
+//import './ViewDashboard.css'; // Make sure you have a separate CSS file for ViewDashboard if needed
+import { Boxes } from './ui/background-boxes';
+import { Tabs } from "./ui/tabs";
+import CreateProjectForm from './ui/ManageProject/CreateProjectForm';
+import ShowProgress from './ShowProgress';
+import ManageProject from './ui/ManageProject/ManageProject';
 
 const ViewDashboard = () => {
-  const [reconFiles, setReconFiles] = useState([]);
-  const [allowedIPs, setAllowedIPs] = useState([]);
-  const [blacklistedIPs, setBlacklistedIPs] = useState([]);
-  const [penTestProgress, setPenTestProgress] = useState(0);
-
-  // Fetch recon files and other data on component mount
-  useEffect(() => {
-    // TODO: Fetch recon files and set initial state
-    // TODO: Fetch allowed/blacklisted IPs
-    // TODO: Fetch pen test progress
-  }, []);
-
-  // Handlers for IP address management could go here
-  // Example:
-  const addAllowedIP = (ip) => {
-    // TODO: Validate and add the IP address to allowedIPs
-  };
-
-  const addBlacklistedIP = (ip) => {
-    // TODO: Validate and add the IP address to blacklistedIPs
-  };
-
-  // The function to run AI algorithm and display results
-  const runAIAlgorithm = () => {
-    // TODO: Implement the AI algorithm call and display its results
-  };
+  const tabs = [
+    {
+      title: "View Dashboard",
+      value: "view-dashboard",
+      content: <CreateProjectForm /> // Assuming CreateProjectForm represents the content for your dashboard
+    },
+    {
+      title: "Show Progress",
+      value: "show-progress",
+      content: <ShowProgress />,
+    },
+    {
+      title: "Manage Project",
+      value: "manage-project",
+      content: <ManageProject />,
+    },
+    // ...other tabs specific to the dashboard
+  ];
 
   return (
-    <div className="dashboard">
-      <h1>Penetration Test Dashboard</h1>
-      <section className="ai-algorithm">
-        <button onClick={runAIAlgorithm}>Run AI Algorithm</button>
-        {/* Display results of the AI algorithm here */}
-      </section>
-      <section className="recon-files">
-        <h2>Ingested Reconnaissance Files</h2>
-        {/* List and manage recon files here */}
-        <ul>
-          {reconFiles.map((file, index) => (
-            <li key={index}>{file.name}</li>
-          ))}
-        </ul>
-      </section>
-      <section className="ip-management">
-        <h2>IP Address Management</h2>
-        {/* Components/Input fields to add allowed and blacklisted IPs */}
-        <div>
-          <h3>Allowed IPs</h3>
-          {/* List allowed IPs */}
-          <ul>
-            {allowedIPs.map((ip, index) => (
-              <li key={index}>{ip}</li>
-            ))}
-          </ul>
-        </div>
-        <div>
-          <h3>Blacklisted IPs</h3>
-          {/* List blacklisted IPs */}
-          <ul>
-            {blacklistedIPs.map((ip, index) => (
-              <li key={index}>{ip}</li>
-            ))}
-          </ul>
-        </div>
-      </section>
-      <section className="pen-test-progress">
-        <h2>Penetration Test Progress</h2>
-        {/* Display pen test progress here */}
-        <progress value={penTestProgress} max={100}></progress>
-      </section>
+    <div className="dashboard-container"> {/* Make sure this container is styled for your dashboard */}
+      <Boxes className="background-boxes" /> {/* Background boxes if they are part of your dashboard */}
+      <Tabs tabs={tabs} className="tabs" /> {/* Dashboard specific tabs */}
+      {/* ...other components like cards and additional info specific to the dashboard */}
     </div>
   );
 };
 
 export default ViewDashboard;
-
