@@ -8,7 +8,17 @@
   padding: 2rem;
   text-align: center;
 }
-
+.typewriter-effect {
+  position: relative; /* If it's not already positioned */
+  z-index: 10;        /* Higher than the background */
+}
+.join-button {
+  position: relative; /* If it's not already positioned */
+  z-index: 10;        /* Same or higher than typewriter to be above the background */
+}
+.background-boxes {
+  z-index: 0; /* Ensures that boxes are at the back */
+}
 .logo {
   height: 6em;
   padding: 1.5em;
