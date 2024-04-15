@@ -1,9 +1,16 @@
 "use client";
 
 import { SparklesCore } from "./ui/sparkles";
-import LoginButtonWithCard from "./ui/LoginButtonWithCard"; // Make sure to import it
 
+import PropTypes from 'prop-types';
 export function SparklesPreview({ onLogin }) {
+  // Component code here
+}
+
+SparklesPreview.propTypes = {
+  onLogin: PropTypes.func.isRequired,
+};
+function SparklesPreview({ onLogin }) {
   return (
     <div className="h-screen w-full bg-black flex flex-col items-center justify-center overflow-hidden">
       <h1 className="text-7xl font-bold text-center text-white relative z-10">
