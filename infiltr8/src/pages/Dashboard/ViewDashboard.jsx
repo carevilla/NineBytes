@@ -21,6 +21,11 @@ const ViewDashboard = () => {
       content: <AssessFiles />
     },
     {
+      title: "Edit IP Addresses",
+      content: <div>Edit</div>
+      
+    },
+    {
       title: "Open Project",
       content: <ManageProject />
     },
@@ -30,6 +35,10 @@ const ViewDashboard = () => {
     },
     {
       title: "View Results",
+      content: <div>Results content here</div> // Assuming you want to add content for this tab
+    },
+    {
+      title:"Accessibility Options",
       content: <div>Results content here</div> // Assuming you want to add content for this tab
     }
     // ...other tabs

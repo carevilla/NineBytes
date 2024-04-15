@@ -17,6 +17,8 @@ const components = [
 
 export function Navigation() {
   return (
+    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', position: 'fixed', top: '0', zIndex: '1000'}}>
+     
     <NavigationMenu>
       <NavigationMenuList>
         {/* ... other menu items */}
@@ -81,6 +83,8 @@ export function Navigation() {
         </NavigationMenuItem>
       </NavigationMenuList>
     </NavigationMenu>
+
+    </div>
   );
 }
 
