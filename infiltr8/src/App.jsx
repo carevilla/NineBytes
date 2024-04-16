@@ -22,7 +22,7 @@ function App() {
     setTimeout(() => {
       setLoading(false);
       setIsJoining(true); // Set state indicating user has "logged in"
-      navigate("/dashboard"); // Navigate to dashboard after "login"
+      navigate("/maindash"); // Navigate to dashboard after "login"
     }, 3000); // Adjust this time as needed
   };
 

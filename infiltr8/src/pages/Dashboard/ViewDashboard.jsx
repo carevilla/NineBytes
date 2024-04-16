@@ -7,7 +7,7 @@ import ManageProject from '../ManageProject/ManageProject';
 import { TypewriterEffect } from '../../components/ui/typewriter-effect';
 import './ViewDashboard.css'; 
 import AssessFiles from './AssessFiles';
-import { Navigation } from "../../components/NavigationButtons";
+import Navbar from '../../components/NavBar'; 
 
 
 const ViewDashboard = () => {
@@ -45,23 +45,19 @@ const ViewDashboard = () => {
   ];
 
   return (
-    <div className="app-container relative">
-      <Navigation />
-  
-      <div className="absolute z-50 inset-0 flex items-center justify-center text-white font-bold px-4 pointer-events-none text-3xl text-center md:text-4xl lg:text-7xl">
-        <p className="bg-clip-text text-transparent drop-shadow-2xl bg-gradient-to-b from-white/80 to-white/20">
-     
-        </p>
+    
+    
+    <div className="app-container relative pt-[4rem]"> {/* Added padding-top to avoid content overlap */}
+       {/* This will be fixed at the top */}
+       <div className='navbar'><Navbar /> </div>
+       
+      <div className="flex flex-col justify-center items-center space-y-4">
+        <TypewriterEffect words={[{ text: "Manage Project" }]} className="typewriter-effect" />
+        <Tabs tabs={tabs} />
+        {/* ...other components */}
       </div>
-
-      <TypewriterEffect
-        words={[{ text: "Manage Project" }]}
-        className="typewriter-effect"
-      />
-      <Tabs tabs={tabs} />
-      {/* ...other components */}
-      {/* Optionally, if Boxes are still part of your design, include them here */}
-      {/* <Boxes className="background-boxes" /> */}
+      {/* Optionally, if you want to include Boxes as a background */}
+    
     </div>
   );
 };

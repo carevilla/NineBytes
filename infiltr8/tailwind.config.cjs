@@ -71,7 +71,8 @@ module.exports = {
   },
   plugins: [
     // Other plugins you might be using
-    
+    [require("daisyui")],
+
     function addVariablesForColors({ addBase, theme }) {
       let allColors = flattenColorPalette(theme('colors'));
       let newVars = Object.fromEntries(
